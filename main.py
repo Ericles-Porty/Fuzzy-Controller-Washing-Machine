@@ -59,7 +59,7 @@ from skfuzzy import control as ctrl
 # Variáveis Linguísticas
 sujeira = ctrl.Antecedent(np.arange(0,101,1), 'SUJEIRA')
 mancha = ctrl.Antecedent(np.arange(0,101,1), 'MANCHA')
-tempo = ctrl.Consequent(np.arange(0,101,1), 'TEMPO')
+tempo = ctrl.Consequent(np.arange(0,61,1), 'TEMPO')
 
 # Conjuntos de Termos Linguísticos (membership function tipo trapezoidal)
 sujeira['POUCA'] = fuzz.trimf(sujeira.universe, [0,0,50])
@@ -74,7 +74,7 @@ tempo['MUITO_CURTO'] = fuzz.trimf(tempo.universe, [0,0,10])
 tempo['CURTO'] = fuzz.trimf(tempo.universe, [0,10,25])
 tempo['MEDIO'] = fuzz.trimf(tempo.universe, [10,25,40])
 tempo['LONGO'] = fuzz.trimf(tempo.universe, [25,40,60])
-tempo['MUITO_LONGO'] = fuzz.trapmf(tempo.universe, [40,60,100,100])
+tempo['MUITO_LONGO'] = fuzz.trimf(tempo.universe, [40,60,60])
 
 """### Mostrando graficamente as partições dos Universos **DINHEIRO**, **PESSOAL**  e **RISCO**"""
 
